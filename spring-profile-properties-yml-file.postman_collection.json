@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "1081ec34-ac5d-4ffa-b2f5-593f7734c438",
+		"name": "spring-profile-properties-yml-file",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9784437"
+	},
+	"item": [
+		{
+			"name": "Dev API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/spring-profile/getMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"spring-profile",
+						"getMessage"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Dev API",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/spring-profile/getMessage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"spring-profile",
+								"getMessage"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Oct 2022 23:29:53 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Hello from Dev (Properties File)\",\n    \"activeProfile\": \"dev\",\n    \"serverPort\": \"8081\",\n    \"description\": \"This is from Development environment (Properties File)\",\n    \"valueFromMainConfig\": \"This value is from main config file (Properties File)\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UAT API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/spring-profile/getMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"spring-profile",
+						"getMessage"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UAT API",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/spring-profile/getMessage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"spring-profile",
+								"getMessage"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Oct 2022 23:31:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Hello from UAT (Properties File)\",\n    \"activeProfile\": \"uat\",\n    \"serverPort\": \"8082\",\n    \"description\": \"This is from UAT environment (Properties File)\",\n    \"valueFromMainConfig\": \"This value is from main config file (Properties File)\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Production API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/spring-profile/getMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"spring-profile",
+						"getMessage"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Production API",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/spring-profile/getMessage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"spring-profile",
+								"getMessage"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Oct 2022 23:32:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Hello from Prod (Properties File)\",\n    \"activeProfile\": \"prod\",\n    \"serverPort\": \"8083\",\n    \"description\": \"This is from Production environment (Properties File)\",\n    \"valueFromMainConfig\": \"This value is from main config file (Properties File)\"\n}"
+				}
+			]
+		}
+	]
+}
