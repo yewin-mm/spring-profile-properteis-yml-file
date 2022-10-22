@@ -1,0 +1,9 @@
+
+# application will use this file when you set profile active as dev in main YML file
+
+server:
+  port: 8081
+
+message:
+  title: Hello from Dev (YML File)
+  description: This is from Development environment (YML File)

@@ -1,0 +1,9 @@
+
+# application will use this file when you set profile active as prod in main YML file (application.yml)
+
+server:
+  port: 8083
+
+message:
+  title: Hello from Prod (YML File)
+  description: This is from Production environment (YML File)

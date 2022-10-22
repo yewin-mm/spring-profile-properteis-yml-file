@@ -1,0 +1,81 @@
+
+# This is the main config which will control other config files
+
+server:
+  port: 8080
+  servlet:
+    context-path: /spring-profile
+
+
+# First of all, no need to add both Properties file type and YML file type like this application,
+# You can use your prefer file type, eg. YML files or Properties files (only one file type is enough)
+# This is demo application and So, I just show as example.
+
+# Separating application profile is good approach when you build enterprise application which is running on different servers
+# Eg. your application need to run on UAT (for testing purpose), and Production (for real world go live app)
+# For that case, there might have different configs in those two servers.
+# Eg. you need to call to Third party and API endpoints are reading from here,
+# that Third party might have UAT for testing and Production environment too and might have different credentials for each servers.
+
+# for that above case, if you have only one application properties file,
+# you need to change Thirdparty UAT api link or UAT server credentials when you deploy your application to your UAT server.
+# and also you need to change Thirdparty Production api link or Production server credentials when you deploy your application to Production server.
+# So, that will busy for you, and it might get mistake between different API endpoints as different Third party servers when you deploy your application.
+# That is the example and in real world, there might have many API link and many other values which are different between UAT and Production servers.
+# So, that will cause mistake when you deploy.
+# For that case, all will be OK by config only one time by separating spring profile.
+# All you need is just need to change profile active value in this main config file, and it will reduce mistake between different server values.
+
+# Whatever you have only one server or many servers,
+# if third party requirement or apis endpoint are different as third party servers,
+# It's better using separating profile (separating config file) in your application for different values as third party requirements.
+
+# There can have many servers when you deploy application based on your company policy.
+# eg. Dev server (Development server for developer testing),
+# UAT server (for QA testing),
+# Staging server (for production ready testing),
+# Pre-Prod server (Pre production for final testing),
+# Production server (for go live app deployment place), etc...
+
+message:
+  title: Hello from Main Config (YML File)
+  valueFromMainConfig: This value is from main config file (YML File)
+
+
+# This is the main config file.
+# Spring framework will look up this file for profile active
+# If there is profile active keyword, spring get the value from that,
+# Spring will find as per profile-active keyword name -> application-{name}.properties or application-{name}.yml
+# you can add any name whatever you want, but that name file need to create first,
+# eg. if you add test in profile active, you need to create application-test.properties or application-test.yml first.
+# eg. If you set active profile to dev,
+# this application will run with application-dev.properties file or application-dev.yml file
+# and take all config values from that application-dev file even server port, context path, other fields, etc...
+
+
+# if there don't have some config fields in that above file (eg. dev) which value need to use in application started (eg. context path) or which value pull from class (eg. message.valueFromMainConfig),
+# Spring will take that value from this main config file.
+# eg. if you comment out server.port in application-dev.properties file, system will use port which declare in that file.
+
+
+# You can build application either properties file or yml file
+# Here, I added these two file types.
+# You can go with only one file type.
+# If you set both config file in your application, spring will take properties file first.
+# You can test that by changing port to different in application-dev.properties or application-dev.yml file
+# and see which file is working first (Spring priority look up file is properties file type) by checking running port
+# You can also check YML file is working well or not by comment out all line properties file or delete properties file.
+
+spring:
+  profiles:
+    active: dev
+
+# You can test by changing above profile active to UAT and Production
+# and see the response by calling api for other config file is working well or not.
+# eg. spring.profiles.active=uat
+# eg. spring.profiles.active=prod
+
+# you can check which config file is running in application log when application was started like below,
+# The following profiles are active: dev
+# ...
+# Tomcat started on port(s): 8081 (http) with context path '/spring-profile' (this is from your dev config file)
