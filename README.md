@@ -106,7 +106,6 @@ Click below links.
    ```sh
    git clone https://github.com/yewin-mm/spring-profile-properties-yml-file.git
 
-
 <a name="prerequisites"></a>
 ### 🔑 Prerequisites
 Prerequisites can be found in here [Spring Boot Application Instruction](https://github.com/yewin-mm/spring-boot-app-instruction).
